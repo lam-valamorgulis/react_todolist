@@ -1,0 +1,121 @@
+/* display=swap: This is an important attribute. It tells the browser to use a "swap" strategy for font loading. The browser will render text using a default font first and then swap in the custom font when it's available. This improves page load performance and provides a better user experience. */
+
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Quicksand:wght@500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* font-size: 62.5%;: This rule sets the font size of the html element to 62.5% of the default font size. The default font size of most browsers is typically around 16 pixels. By setting it to 62.5%, you're effectively making the default font size 10 pixels (62.5% of 16 pixels). */
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 2.4rem;
+  font-family: sans-serif;
+  color: #5a3e2b;
+  font-family: 'Quicksand';
+  font-weight: 500;
+}
+
+/* .app element is styled to take up the entire height and width of the viewport. It's set as a grid container with four rows, each with different height behaviors: the first two rows adjust to their content, the third row takes up available remaining space, and the fourth row adjusts to its content. This kind of layout is often used for creating responsive and flexible page structures. */
+
+.app {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  background-color: red;
+}
+
+h1 {
+  text-align: center;
+  background-color: #f4a226;
+  font-family: 'Monoton';
+  font-size: 8rem;
+  font-weight: 400;
+  word-spacing: 30px;
+  letter-spacing: -5px;
+  padding: 2.4rem 0;
+}
+
+.add-form {
+  background-color: #e5771f;
+  padding: 2.8rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+h3 {
+  margin-right: 1.6rem;
+  font-size: 2.4rem;
+}
+
+button,
+select,
+input {
+  background-color: #ffebb3;
+  color: #5a3e2b;
+  font-family: inherit;
+  border: none;
+  border-radius: 10rem;
+  padding: 1.2rem 3.2rem;
+  font-weight: 700;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.add-form button {
+  text-transform: uppercase;
+  background-color: #76c7ad;
+}
+
+.list {
+  background-color: #5a3e2b;
+  color: #ffebb3;
+  padding: 4rem 0;
+
+  display: flex;
+  /*This aligns the child elements along the main axis with equal spacing between them, effectively pushing them to the top and bottom of the container*/
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 3.2rem;
+  align-items: center;
+  text-align: center;
+}
+
+.actions button,
+.actions select {
+  text-transform: uppercase;
+  padding: 0.8rem 2.4rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0 0.8rem;
+}
+
+.list ul {
+  list-style: none;
+  width: 80%;
+  overflow: scroll;
+
+  display: grid;
+  /* This property defines the columns for the grid layout. It creates columns that automatically adjust based on the available width of the container. Each column has a minimum width of 250px and can expand to fill available space using the 1fr unit. */
+
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.2rem;
+  justify-content: center;
+  align-content: start;
+}
+
+.stat {
+  background-color: #76c7ad;
+  text-align: center;
+  font-weight: 700;
+  padding: 3.2rem 0;
+}
