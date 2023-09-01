@@ -4,9 +4,10 @@ import { useState } from 'react';
 export default function App() {
   const [items, setItems] = useState([]);
 
+  // review why consolog still console
   const handleAddItem = (new_item) => {
-    setItems((item) => [...items, new_item]);
-    console.log(items);
+    setItems((items) => [...items, new_item]);
+    // console.log(items);
   };
 
   return (

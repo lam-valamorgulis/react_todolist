@@ -1,4 +1,6 @@
 import { useState } from 'react'
+
+
 const Form = ({ onAddItem }) => {
   const [description, setDescription] = useState('')
     
@@ -6,10 +8,11 @@ const Form = ({ onAddItem }) => {
   const handleSubmit = (e) => {
     e.preventDefault()
     if (!description) return  
-    const new_item = {description,done:false,id:Date.now()}
-    onAddItem(description)
+    const new_item = { description,done:false,id:Date.now() }
+    onAddItem(new_item)
     setDescription('')
   }
+  
   
   return (
     <form className="add-form" onSubmit = {handleSubmit}>
