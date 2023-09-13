@@ -1,9 +1,22 @@
-const Stat = () => {
-  return (
-    <div className='stat'>
-      💼 You have 6 items on your list, and you already done 0 (0%) 
-    </div>
-  )
-}
+export default function Stats({ items }) {
+  if (!items.length)
+    return (
+      <p className="stats">
+        <em>Start adding some items to your packing list 🚀</em>
+      </p>
+    );
 
-export default Stat
+  const numItems = items.length;
+  const numPacked = items.filter((item) => item.done).length;
+  const percentage = Math.round((numPacked / numItems) * 100);
+
+  return (
+    <footer className="stats">
+      <em>
+        {percentage === 100
+          ? 'You finished everything!'
+          : ` 💼 You have ${numItems} items on your list, and you already packed ${numPacked} (${percentage}%)`}
+      </em>
+    </footer>
+  );
+}

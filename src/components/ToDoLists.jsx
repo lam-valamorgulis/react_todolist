@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Item } from '../components';
 
-const ToDoLists = ({ items }) => {
+const ToDoLists = ({ items, onDeleteItem, onToggleItem }) => {
   const [sortBy, setSortBy] = useState('input');
 
   let sortedItem;
@@ -19,7 +19,7 @@ const ToDoLists = ({ items }) => {
     <div className="list">
       <ul>
         {sortedItem.map((item) => (
-          <Item item={item} />
+          <Item item={item} onDeleteItem={onDeleteItem} onToggleItem={onToggleItem}/>
         ))}
       </ul>
 
